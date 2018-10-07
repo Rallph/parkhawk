@@ -16,6 +16,8 @@ def parking_spot_create_view(request):
     context = {'form': form}
 
     return render(request, 'parkmap/form.html', context)
+
+
 def about(request):
     return render(request, 'parkmap/about.html')
 
