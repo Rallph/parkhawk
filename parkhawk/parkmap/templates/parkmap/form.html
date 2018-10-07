@@ -4,17 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Parking Spot Form</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'parkmap/css/bootstrap.min.css' %}" type="text/css" >
+    <title>ParkHawk</title>
 </head>
 <body>
-    
-    <form method="POST"> {% csrf_token %}
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/">Parkhawk</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/about">About<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/find-parking">Find Parking<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/submit-parking">Add Data<span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
 
-        {{ form }}
-        
-        <button type="submit">Submit</button>
+            </div>
+        </nav>
+        <form class="jumbotron form-inline" method="POST"> {% csrf_token %}
 
-    </form>
+            {{ form }}
+
+            <button type="submit">Submit</button>
+
+        </form>
+    </div>
 
 </body>
 </html>
