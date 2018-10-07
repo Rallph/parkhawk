@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic.list import ListView
 from .models import ParkingSpot
 from .forms import ParkingSpotForm
 
@@ -23,3 +24,11 @@ def about(request):
 
 def findParking(request):
     return render(request, 'parkmap/findParking.html')
+
+class ParkingListView(ListView):
+
+    model = ParkingSpot
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
