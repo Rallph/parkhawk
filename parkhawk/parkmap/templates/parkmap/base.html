@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'parkmap/css/bootstrap.min.css' %}" type="text/css" >
+    <link rel="stylesheet" href="{% static 'parkmap/css/main_page.css' %}" type="text/css">
 
     <title>ParkHawk</title>
 </head>
@@ -17,19 +18,27 @@
 </header>
 
 <body>
-
+    <div class="main-jumbotron"></div>
     <div class="jumbotron">
 
-        <h1 class="display-4">ParkHawk</h1>
+        <h1 class="display-4" style="color: #f8b500;">ParkHawk</h1>
         <p class="lead">ParkHawk is a tool that uses crowd-sourced data from people like you to help everyone find free and cheap parking around the University of Iowa and Iowa City!</p>
         <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <a class="btn btn-primary btn-lg" href="about" role="button">Learn more</a>
+        <p>The Iowa City area has a lot to offer, but sometimes it can be a bit of a struggle to get there</p>
+        <a class="btn btn-primary btn-lg" href="about" role="button">Find Your Spot Now</a>
         </div>
 
     </div>
 
+    <div class="jumbotron second-jumbotron">
 
+        <h4>Parking can be a bit of a hassle in Iowa City</h4>
+        <p>It's a great place, but finding somewhere to leave your car is difficult sometimes</p>
+
+        <h5>With the power of crowdsourcing, the people of Iowa City can help each other find the most convenient places to park</h5>
+        
+
+    </div>
     
 </body>
 </html>
