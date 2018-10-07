@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'parkmap/css/bootstrap.min.css' %}" type="text/css" >
+    <link rel="stylesheet" href="{% static 'parkmap/css/parkingspot_list.css' %}" type="text/css" >
     <title>ParkHawk</title>
+   
+      
 </head>
 
 <header>
@@ -14,15 +17,20 @@
 </header>
 
 <body>
+    
 
     <div class="container-fluid">
         <div class="jumbotron">
             <h1 class="display-4">Find Parking Near You</h1>
+            <div id="map"></div>
         </div>
 
 
         <h2>Parking Spots</h2>
         
+        
+
+
         <div class="list-group">
 
 
@@ -39,6 +47,27 @@
             {% endfor %}
         </div>
 
-    </div>    
+    </div>
+
+    {% block script %}
+        <script>
+            
+            let locList = [];
+
+            {% for spot in object_list %}
+
+                locList.push({lat:{{ spot.latitude }}, lng: {{ spot.longitude }} });
+            {% endfor %}
+
+           
+        
+        </script>
+    {% endblock %}
+    <script src="{% static 'parkmap/js/map.js' %}"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBya_p_fSTqn0PExLuB8kIwxPzDYnDI9Mg&callback=initMap"></script>
+    
+    
+
+
 </body>
 </html>
