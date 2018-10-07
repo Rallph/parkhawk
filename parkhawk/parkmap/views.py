@@ -7,3 +7,6 @@ def index(request):
 
 def about(request):
     return render(request, 'parkmap/about.html')
+
+def findParking(request):
+    return render(request, 'parkmap/findParking.html')
