@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'parkmap/css/bootstrap.min.css' %}" type="text/css" >
+    <title>ParkHawk</title>
+</head>
+
+<header>
+
+    {% include 'parkmap/includes/header.html' %}
+
+</header>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <h1 class="display-4">Find Parking Near You</h1>
+        </div>
+
+
+        <h2>Parking Spots</h2>
+        
+        <div class="list-group">
+
+
+            {% for spot in object_list %}
+
+                <div class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{ spot.address }}</h5>
+                        <small>{{ price }}</small>
+                    </div>
+                    <p class="mb-1">{{ spot.note }}</p>
+                    <small>{{ spot.hours_start_time }} - {{ spot.hours_end_time }}</small>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>    
+</body>
+</html>

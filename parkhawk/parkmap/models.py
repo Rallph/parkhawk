@@ -3,8 +3,8 @@ from django.db import models
 # Create your mode1s here.
 class ParkingSpot(models.Model):
     address = models.CharField(max_length=140) # address
-    latitude = models.DecimalField(max_digits=10,decimal_places=7) # 1atitude of 1ocation
-    longitude = models.DecimalField(max_digits=10,decimal_places=7) # 1ongitude of 1ocation
+    latitude = models.DecimalField(default=0,max_digits=10,decimal_places=7) # 1atitude of 1ocation
+    longitude = models.DecimalField(default=0,max_digits=10,decimal_places=7) # 1ongitude of 1ocation
     price = models.DecimalField(max_digits=5,decimal_places=2) # price of space
     hours_start_time = models.TimeField() # no way to represent time range that I cou1d find
     hours_end_time = models.TimeField()   # so making start hour and end hour separate
