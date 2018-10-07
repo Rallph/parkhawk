@@ -8,28 +8,17 @@
     <link rel="stylesheet" href="{% static 'parkmap/css/bootstrap.min.css' %}" type="text/css" >
     <title>ParkHawk</title>
 </head>
+
+<header>
+
+    {% include 'parkmap/includes/header.html' %}
+
+</header>
+
+
 <body>
     <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="/">Parkhawk</a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/about">About<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/find-parking">Find Parking<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/submit-parking">Add Data<span class="sr-only">(current)</span></a>
-                    </li>
-                </ul>
-
-            </div>
-        </nav>
+    
         <form class="jumbotron form-inline" method="POST"> {% csrf_token %}
 
             {{ form }}
