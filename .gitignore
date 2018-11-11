@@ -3,3 +3,7 @@ parkhawk/parkhawk/__pycache__/
 parkhawk/parkhawk/secret.py
 
 parkhawk/parkhawk/__pycache__/settings.cpython-37.pyc
+parkmap/migrations/0001_initial.py
+parkmap/migrations/0002_auto_20181007_0509.py
+parkmap/migrations/__init__.py
+parkmap/migrations/0001_initial.py
